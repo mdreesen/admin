@@ -7,9 +7,9 @@ export default function Page() {
   const router = useRouter();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
+    event.preventDefault();
 
-      return router.push(`/groupawesome/`);
+    return router.push(`/groupawesome/`);
   };
 
   return (
@@ -18,7 +18,7 @@ export default function Page() {
         <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div>
-            <h2 className="mt-8 text-3xl/9 font-bold tracking-tight text-gray-900">Welcome to RADMIN</h2>
+              <h2 className="mt-8 text-3xl/9 font-bold tracking-tight text-gray-900">Welcome to RADMIN</h2>
               <h2 className="mt-8 text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
 
             </div>
