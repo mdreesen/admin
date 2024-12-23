@@ -245,7 +245,7 @@ const DonutChart = React.forwardRef<HTMLDivElement, DonutChartProps>(
           >
             {showLabel && isDonut && (
               <text
-                className="fill-gray-700 dark:fill-gray-300"
+                className="fill-blue-700 dark:fill-blue-300"
                 x="50%"
                 y="50%"
                 textAnchor="middle"
@@ -256,7 +256,7 @@ const DonutChart = React.forwardRef<HTMLDivElement, DonutChartProps>(
             )}
             <Pie
               className={cx(
-                "stroke-white dark:stroke-gray-950 [&_.recharts-pie-sector]:outline-none",
+                "stroke-white dark:stroke-blue-950 [&_.recharts-pie-sector]:outline-none",
                 onValueChange ? "cursor-pointer" : "cursor-default",
               )}
               data={parseData(data, categoryColors, category)}

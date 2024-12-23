@@ -692,7 +692,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                 // base
                 "text-xs",
                 // text fill
-                "fill-gray-500",
+                "fill-grey-500",
                 { "mt-4": layout !== "vertical" },
               )}
               tickLine={false}
@@ -722,7 +722,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                 <Label
                   position="insideBottom"
                   offset={-20}
-                  className="fill-gray-800 text-sm font-medium"
+                  className="fill-blue-800 text-sm font-medium"
                 >
                   {xAxisLabel}
                 </Label>
