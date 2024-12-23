@@ -1,6 +1,6 @@
+"use client";
 // Tremor BarChart [v0.2.1]
 
-"use client";
 import React from "react"
 import { RiArrowLeftSLine, RiArrowRightSLine } from "@remixicon/react"
 import {
