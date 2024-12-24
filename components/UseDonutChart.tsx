@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react"
-
-import { DonutChart, DonutChartEventProps } from "@/components/charts/DonutChart"
+import { DonutChart } from "@/components/charts/DonutChart"
 
 const chartdata = [
   {
@@ -35,20 +33,16 @@ const chartdata = [
   },
 ]
 
-export const UseDonutChart = () => {
-  const [value, setValue] = React.useState<DonutChartEventProps>(null)
-  return (
-    <>
-      <DonutChart
-        className="mx-auto" 
-        data={chartdata}
-        category="name"
-        value="amount"
-        onValueChange={(v) => setValue(v)}
-      />
-      <pre className="mt-8 rounded-md bg-gray-950 p-3 text-sm text-white">
-        {JSON.stringify(value, null, 2)}
-      </pre>
-    </>
-  )
-}
+export const UseDonutChart = () => (
+  <div className="flex flex-col items-center justify-center gap-4 h-[100%]">
+    <DonutChart
+      data={chartdata}
+      category="name"
+      value="amount"
+      valueFormatter={(number: number) =>
+        `$${Intl.NumberFormat("us").format(number).toString()}`
+      }
+    />
+  </div>
+
+)

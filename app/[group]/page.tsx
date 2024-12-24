@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 // Charts
 import { UseRevenueBarChart } from "@/components/UseRevenueBarChart";
 import { UseDonutChart } from '@/components/UseDonutChart';
@@ -7,40 +8,50 @@ import Admins from '@/components/cards/Admins';
 import Customers from '@/components/cards/Customers';
 
 
-export default function Page() {
+export default async function Page() {
 
     const topFirst = (
-        <div className="relative lg:col-span-3 border-solid border-2 border-black rounded-md p-2 ">
-            <h2 className="text-base/7 font-semibold text-indigo-900 border-b-2 border-black">Team</h2>
-            <Admins />
+        <div className="relative lg:col-span-3 border-solid border-2 border-grey-500 rounded-md p-2">
+            <h2 className="text-base/7 font-semibold text-indigo-900 border-b-2 border-grey-300">Team</h2>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Admins />
+            </Suspense>
         </div>
     );
 
     const topSecond = (
-        <div className="relative lg:col-span-3 border-solid border-2 border-black rounded-md p-2">
-            <h2 className="text-base/7 font-semibold text-indigo-900 border-b-2 border-black">Customers</h2>
-            <Customers />
+        <div className="relative lg:col-span-3 border-solid border-2 border-grey-500 rounded-md p-2">
+            <h2 className="text-base/7 font-semibold text-indigo-900 border-b-2 border-grey-300">Customers</h2>
+            <Suspense fallback={<div>Loading...</div>}>
+                <Customers />
+            </Suspense>
         </div>
     );
 
     const bottomFirst = (
         <div className="relative lg:col-span-2">
             <h2 className="text-base/7 font-semibold text-indigo-900">Revenue</h2>
-            <UseRevenueBarChart />
+            <Suspense fallback={<div>Loading...</div>}>
+                <UseRevenueBarChart />
+            </Suspense>
         </div>
     );
 
     const bottomSecond = (
         <div className="relative lg:col-span-2">
             <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
-            <UseDonutChart />
+            <Suspense fallback={<div>Loading...</div>}>
+                <UseDonutChart />
+            </Suspense>
         </div>
     );
 
     const bottomThird = (
         <div className="relative lg:col-span-2">
             <h2 className="text-base/7 font-semibold text-indigo-900">Customers Per Month</h2>
-            <UseRevenueBarChart />
+            <Suspense fallback={<div>Loading...</div>}>
+                <UseRevenueBarChart />
+            </Suspense>
         </div>
     );
 

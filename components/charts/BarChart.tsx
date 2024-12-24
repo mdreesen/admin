@@ -692,7 +692,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                 // base
                 "text-xs",
                 // text fill
-                "fill-grey-500",
+                "text-grey-500",
                 { "mt-4": layout !== "vertical" },
               )}
               tickLine={false}

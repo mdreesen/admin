@@ -74,9 +74,9 @@ const ChartTooltip = ({
           // base
           "rounded-md border text-sm shadow-md",
           // border color
-          "border-gray-200 dark:border-gray-800",
+          "border-gray-200",
           // background color
-          "bg-white dark:bg-gray-950",
+          "bg-white",
         )}
       >
         <div className={cx("space-y-1 px-4 py-2")}>
@@ -98,7 +98,7 @@ const ChartTooltip = ({
                     // base
                     "whitespace-nowrap text-right",
                     // text color
-                    "text-gray-700 dark:text-gray-300",
+                    "text-gray-700",
                   )}
                 >
                   {category}
@@ -109,7 +109,7 @@ const ChartTooltip = ({
                   // base
                   "whitespace-nowrap text-right font-medium tabular-nums",
                   // text color
-                  "text-gray-900 dark:text-gray-50",
+                  "text-gray-900",
                 )}
               >
                 {valueFormatter(value)}
@@ -225,7 +225,7 @@ const DonutChart = React.forwardRef<HTMLDivElement, DonutChartProps>(
     return (
       <div
         ref={forwardedRef}
-        className={cx("h-40 w-40", className)}
+        className={cx("h-[30vh] w-[30vh]", className)}
         tremor-id="tremor-raw"
         {...other}
       >
