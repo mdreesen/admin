@@ -6,32 +6,52 @@ import { BarChart, type BarChartEventProps } from "@/components/charts/BarChart"
 
 const chartdata = [
   {
-    name: "Amphibians",
-    "Number of threatened species": 2488,
+    name: "January",
+    "Revenue of month": 2488,
   },
   {
-    name: "Birds",
-    "Number of threatened species": 1445,
+    name: "February",
+    "Revenue of month": 2188,
   },
   {
-    name: "Crustaceans",
-    "Number of threatened species": 743,
+    name: "March",
+    "Revenue of month": 2088,
   },
   {
-    name: "Ferns",
-    "Number of threatened species": 281,
+    name: "April",
+    "Revenue of month": 2388,
   },
   {
-    name: "Arachnids",
-    "Number of threatened species": 251,
+    name: "May",
+    "Revenue of month": 3088,
   },
   {
-    name: "Corals",
-    "Number of threatened species": 232,
+    name: "June",
+    "Revenue of month": 3500,
   },
   {
-    name: "Algae",
-    "Number of threatened species": 98,
+    name: "July",
+    "Revenue of month": 5000,
+  },
+  {
+    name: "August",
+    "Revenue of month": 8000,
+  },
+  {
+    name: "September",
+    "Revenue of month": 6000,
+  },
+  {
+    name: "October",
+    "Revenue of month": 3000,
+  },
+  {
+    name: "November",
+    "Revenue of month": 2488,
+  },
+  {
+    name: "December",
+    "Revenue of month": 1200,
   },
 ]
 
@@ -43,7 +63,7 @@ export const UseRevenueBarChart = () => {
         className="h-72"
         data={chartdata}
         index="name"
-        categories={["Number of threatened species"]}
+        categories={["Revenue of month"]}
         yAxisWidth={45}
         onValueChange={(v) => setValue(v)}
       />

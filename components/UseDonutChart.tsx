@@ -4,32 +4,24 @@ import { DonutChart } from "@/components/charts/DonutChart"
 
 const chartdata = [
   {
-    name: "SolarCells",
-    amount: 4890,
+    name: "Employees",
+    amount: 15000,
   },
   {
-    name: "Glass",
-    amount: 2103,
+    name: "Materials",
+    amount: 8000,
   },
   {
-    name: "JunctionBox",
-    amount: 2050,
+    name: "Vehicles",
+    amount: 5000,
   },
   {
-    name: "Adhesive",
-    amount: 1300,
+    name: "Rent",
+    amount: 5120,
   },
   {
-    name: "BackSheet",
-    amount: 1100,
-  },
-  {
-    name: "Frame",
-    amount: 700,
-  },
-  {
-    name: "Encapsulant",
-    amount: 200,
+    name: "Bills",
+    amount: 1000,
   },
 ]
 
@@ -37,6 +29,7 @@ export const UseDonutChart = () => (
   <div className="flex flex-col items-center justify-center gap-4 h-[100%]">
     <DonutChart
       data={chartdata}
+      variant="pie"
       category="name"
       value="amount"
       valueFormatter={(number: number) =>
