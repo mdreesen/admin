@@ -739,7 +739,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                 // base
                 "text-xs",
                 // text fill
-                "fill-gray-500",
+                "fill-blue-500",
               )}
               tick={{
                 transform:
