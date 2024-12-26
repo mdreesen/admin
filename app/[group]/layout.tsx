@@ -9,15 +9,14 @@ const user = {
     email: 'tom@example.com',
 }
 const navigation = [
-    { name: 'Dashboard', href: '/groupawesome', current: true },
+    { name: 'Dashboard', href: '/groupawesome', current: false },
     { name: 'Customers', href: '/groupawesome/customers', current: false },
     { name: 'Expenses', href: '/groupawesome/expenses', current: false },
     { name: 'Revenue', href: '/groupawesome/revenue', current: false },
     { name: 'Team', href: '/groupawesome/team', current: false },
 ]
 const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
+    { name: 'Your Profile', href: '/groupawesome/profile' },
     { name: 'Sign out', href: '/' },
 ]
 
@@ -64,12 +63,9 @@ export default function RootLayout({
                                                     <a
                                                         key={item.name}
                                                         href={item.href}
-                                                        aria-current={item.current ? 'page' : undefined}
+                                                        aria-current={item.name ? 'page' : undefined}
                                                         className={classNames(
-                                                            item.current
-                                                                ? 'bg-gray-900 text-white'
-                                                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                            'rounded-md px-3 py-2 text-sm font-medium',
+                                                            'text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium',
                                                         )}
                                                     >
                                                         {item.name}
@@ -136,10 +132,9 @@ export default function RootLayout({
                                         key={item.name}
                                         as="a"
                                         href={item.href}
-                                        aria-current={item.current ? 'page' : undefined}
+                                        aria-current={item.name ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                            'block rounded-md px-3 py-2 text-base font-medium',
+                                            'text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'
                                         )}
                                     >
                                         {item.name}
