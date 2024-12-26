@@ -1,7 +1,9 @@
 import { Suspense } from "react";
+
 // Charts
-import { UseRevenueBarChart } from "@/components/UseRevenueBarChart";
-import { UseDonutChart } from '@/components/UseDonutChart';
+import { UseRevenueChart } from "@/components/UseRevenueChart";
+import { UseCustomersChart } from "@/components/UseCustomersChart";
+import { UsePieChart } from '@/components/UsePieChart';
 
 // Cards
 import Admins from '@/components/cards/Admins';
@@ -29,28 +31,28 @@ export default async function Page() {
     );
 
     const bottomFirst = (
-        <div className="relative lg:col-span-2">
+        <div className="relative lg:col-span-3 content-center justify-items-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Revenue</h2>
             <Suspense fallback={<div>Loading...</div>}>
-                <UseRevenueBarChart />
+                <UseRevenueChart />
             </Suspense>
         </div>
     );
 
     const bottomSecond = (
-        <div className="relative lg:col-span-2">
-            <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
-            <Suspense fallback={<div>Loading...</div>}>
-                <UseDonutChart />
-            </Suspense>
-        </div>
+        <div className="relative lg:col-span-3 content-center justify-items-center">
+        <h2 className="text-base/7 font-semibold text-indigo-900">Customers Per Month</h2>
+        <Suspense fallback={<div>Loading...</div>}>
+            <UseCustomersChart />
+        </Suspense>
+    </div>
     );
 
     const bottomThird = (
-        <div className="relative lg:col-span-2">
-            <h2 className="text-base/7 font-semibold text-indigo-900">Customers Per Month</h2>
+        <div className="relative lg:col-span-6 content-center justify-items-center">
+            <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
             <Suspense fallback={<div>Loading...</div>}>
-                <UseRevenueBarChart />
+                <UsePieChart />
             </Suspense>
         </div>
     );
@@ -62,7 +64,7 @@ export default async function Page() {
                 <p className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
                     Your Company Name
                 </p>
-                <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+                <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-3">
                     {topFirst}
                     {topSecond}
                     {bottomFirst}
