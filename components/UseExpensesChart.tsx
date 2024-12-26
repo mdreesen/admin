@@ -1,62 +1,64 @@
 "use client"
 
-import { DonutChart } from "@/components/charts/DonutChart"
+import { formatCurrency } from '@/lib/formatCurrency';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const data = [
   {
-    name: "SolarCells",
-    amount: 4890,
+    name: "Employees",
+    value: 15000,
   },
   {
-    name: "Glass",
-    amount: 2103,
+    name: "Materials",
+    value: 8000,
   },
   {
-    name: "JunctionBox",
-    amount: 2050,
+    name: "Vehicles",
+    value: 5000,
   },
   {
-    name: "Adhesive",
-    amount: 1300,
+    name: "Rent",
+    value: 5120,
   },
   {
-    name: "BackSheet",
-    amount: 1100,
+    name: "Bills",
+    value: 1000,
   },
-  {
-    name: "Frame",
-    amount: 700,
-  },
-  {
-    name: "Encapsulant",
-    amount: 200,
-  },
-]
+];
 
-export const DonutChartHero = () => (
-  <div className="flex flex-col gap-12">
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-gray-700 dark:text-gray-300">Variant: `donut`</p>
-      <DonutChart
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+  return (
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
+export const UseExpensesChart = () => (
+  <ResponsiveContainer width="100%" height={500}>
+    <PieChart width={1200} height={1200}>
+      <Pie
         data={data}
-        category="name"
-        value="amount"
-        valueFormatter={(number: number) =>
-          `$${Intl.NumberFormat("us").format(number).toString()}`
-        }
-      />
-    </div>
-    <div className="flex flex-col items-center justify-center gap-4">
-      <p className="text-gray-700 dark:text-gray-300">Variant: `pie`</p>
-      <DonutChart
-        data={data}
-        variant="pie"
-        category="name"
-        value="amount"
-        valueFormatter={(number: number) =>
-          `$${Intl.NumberFormat("us").format(number).toString()}`
-        }
-      />
-    </div>
-  </div>
+        cx="50%"
+        cy="50%"
+        labelLine={false}
+        label={renderCustomizedLabel}
+        outerRadius='100%'
+        fill="#8884d8"
+        dataKey="value"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} name={entry.name} />
+        ))}
+      </Pie>
+      <Tooltip formatter={value => formatCurrency(value as number)} />
+    </PieChart>
+  </ResponsiveContainer>
 )

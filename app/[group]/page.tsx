@@ -3,7 +3,7 @@ import { Suspense } from "react";
 // Charts
 import { UseRevenueChart } from "@/components/UseRevenueChart";
 import { UseCustomersChart } from "@/components/UseCustomersChart";
-import { UsePieChart } from '@/components/UsePieChart';
+import { UseExpensesChart } from '@/components/UseExpensesChart';
 
 // Cards
 import Admins from '@/components/cards/Admins';
@@ -52,7 +52,7 @@ export default async function Page() {
         <div className="relative lg:col-span-6 content-center justify-items-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
             <Suspense fallback={<div>Loading...</div>}>
-                <UsePieChart />
+                <UseExpensesChart />
             </Suspense>
         </div>
     );

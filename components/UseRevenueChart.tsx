@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { formatCurrency } from '@/lib/formatCurrency';
 
 const data = [
@@ -66,7 +66,6 @@ export const UseRevenueChart = () => {
           <YAxis tickFormatter={tick => formatCurrency(tick)} stroke="black" />
           <CartesianGrid stroke="white" />
           <Tooltip formatter={value => formatCurrency(value as number)} />
-          {/* <Legend /> */}
           <Line name="Revenue Per Month" type="monotone" dataKey="Revenue of month" stroke="black" dot={false} />
         </LineChart>
       </ResponsiveContainer>

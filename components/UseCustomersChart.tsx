@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 const data = [
   {
@@ -65,7 +65,6 @@ export const UseCustomersChart = () => {
           <YAxis stroke="black" />
           <CartesianGrid stroke="white" />
           <Tooltip />
-          {/* <Legend /> */}
           <Line name="Customers Per Month" type="monotone" dataKey="Customers per month" stroke="black" dot={false} />
         </LineChart>
       </ResponsiveContainer>
