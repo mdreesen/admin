@@ -166,15 +166,15 @@ export default function Page() {
     <form>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900">Customer information</h2>
-          <p className="mt-1 text-sm/6 text-gray-600">Name and details of customer.</p>
+          <h2 className="text-base/7 font-semibold text-gray-900">Team member information</h2>
+          <p className="mt-1 text-sm/6 text-gray-600">Name and details of team member.</p>
 
           {personInfo}
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base/7 font-semibold text-gray-900">Address</h2>
-          <p className="mt-1 text-sm/6 text-gray-600">Use a permanent address where customer receives mail.</p>
+          <p className="mt-1 text-sm/6 text-gray-600">Use a permanent address where team member receives mail.</p>
 
           {address}
         </div>

@@ -1,11 +1,9 @@
 import Link from "next/link"
-
-const people = [
-    { name: 'Lindsay Walton', title: 'Home Owner', email: 'lindsay.walton@example.com', phone: '219-241-0061' },
-    // More people...
-  ]
+import { customers } from '@/actions/customers';
   
   export default function Page() {
+    const people = customers();
+
     return (
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center">
@@ -50,18 +48,18 @@ const people = [
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  {people.map((person) => (
-                    <tr key={person.email}>
+                  {people.map((item) => (
+                    <tr key={item.email}>
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                        {person.name}
+                        {item.name}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.title}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.email}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.phone}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{item.title}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{item.email}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{item.phone}</td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                        <a href="#" className="text-indigo-900 hover:text-indigo-900">
-                          Edit<span className="sr-only">, {person.name}</span>
-                        </a>
+                        <Link href={`/groupawesome/customers/edit/${item.id}`} className="text-indigo-900 hover:text-indigo-900">
+                          Edit<span className="sr-only">, {item.name}</span>
+                        </Link>
                       </td>
                     </tr>
                   ))}

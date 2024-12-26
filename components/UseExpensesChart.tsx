@@ -3,29 +3,6 @@
 import { formatCurrency } from '@/lib/formatCurrency';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
-const data = [
-  {
-    name: "Employees",
-    value: 15000,
-  },
-  {
-    name: "Materials",
-    value: 8000,
-  },
-  {
-    name: "Vehicles",
-    value: 5000,
-  },
-  {
-    name: "Rent",
-    value: 5120,
-  },
-  {
-    name: "Bills",
-    value: 1000,
-  },
-];
-
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const RADIAN = Math.PI / 180;
@@ -41,8 +18,10 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
 
-export const UseExpensesChart = () => (
-  <ResponsiveContainer width="100%" height={500}>
+export const UseExpensesChart = ({ data }: any) => {
+
+  return (
+    <ResponsiveContainer width="100%" height={500}>
     <PieChart width={1200} height={1200}>
       <Pie
         data={data}
@@ -54,11 +33,12 @@ export const UseExpensesChart = () => (
         fill="#8884d8"
         dataKey="value"
       >
-        {data.map((entry, index) => (
+        {data.map((entry: any, index: number) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} name={entry.name} />
         ))}
       </Pie>
       <Tooltip formatter={value => formatCurrency(value as number)} />
     </PieChart>
   </ResponsiveContainer>
-)
+  )
+}
