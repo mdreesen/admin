@@ -1,5 +1,7 @@
+import Link from "next/link"
+
 const people = [
-    { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
+    { name: 'Lindsay Walton', title: 'Home Owner', email: 'lindsay.walton@example.com', phone: '219-241-0061' },
     // More people...
   ]
   
@@ -10,16 +12,18 @@ const people = [
           <div className="sm:flex-auto">
             <h1 className="text-base font-semibold text-gray-900">Customers</h1>
             <p className="mt-2 text-sm text-gray-700">
-              A list of all the customers in your account including their name, email and role.
+              A list of all the customers in your account.
             </p>
           </div>
           <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+            <Link href={'/groupawesome/customers/add'}>
             <button
               type="button"
-              className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-900"
+              className="block rounded-md bg-gray-800 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-900"
             >
               Add customer
             </button>
+            </Link>
           </div>
         </div>
         <div className="mt-8 flow-root">
@@ -38,7 +42,7 @@ const people = [
                       Email
                     </th>
                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                      Role
+                      Phone
                     </th>
                     <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
                       <span className="sr-only">Edit</span>
@@ -53,7 +57,7 @@ const people = [
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.title}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.email}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.role}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.phone}</td>
                       <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                         <a href="#" className="text-indigo-900 hover:text-indigo-900">
                           Edit<span className="sr-only">, {person.name}</span>

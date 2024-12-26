@@ -9,7 +9,6 @@ import { UseExpensesChart } from '@/components/UseExpensesChart';
 import Admins from '@/components/cards/Admins';
 import Customers from '@/components/cards/Customers';
 
-
 export default async function Page() {
 
     const topFirst = (
@@ -41,11 +40,11 @@ export default async function Page() {
 
     const bottomSecond = (
         <div className="relative lg:col-span-3 content-center justify-items-center">
-        <h2 className="text-base/7 font-semibold text-indigo-900">Customers Per Month</h2>
-        <Suspense fallback={<div>Loading...</div>}>
-            <UseCustomersChart />
-        </Suspense>
-    </div>
+            <h2 className="text-base/7 font-semibold text-indigo-900">Customers Per Month</h2>
+            <Suspense fallback={<div>Loading...</div>}>
+                <UseCustomersChart />
+            </Suspense>
+        </div>
     );
 
     const bottomThird = (

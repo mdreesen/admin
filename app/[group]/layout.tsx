@@ -1,14 +1,12 @@
 import Image from "next/image";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
-// import { ChevronDownIcon, Cog6ToothIcon } from '@heroicons/react/20/solid'
+import Link from "next/link";
 
 
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
-    imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
     { name: 'Dashboard', href: '/groupawesome', current: true },
@@ -43,13 +41,14 @@ export default function RootLayout({
         ```
       */}
             <div className="min-h-full">
-                <div className="bg-gray-800 pb-32">
-                    <Disclosure as="nav" className="bg-gray-800">
+                <div className="bg-gray-900 pb-32">
+                    <Disclosure as="nav" className="bg-gray-900">
                         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                             <div className="border-b border-gray-700">
                                 <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                                     <div className="flex items-center">
                                         <div className="shrink-0">
+                                            <Link href={'/groupawesome/'}>
                                             <Image
                                                 alt="White Raven Logo"
                                                 width={100}
@@ -57,6 +56,7 @@ export default function RootLayout({
                                                 src={'/assets/logo.webp'}
                                                 className="h-14 w-14 rounded-full object-cover scale-75"
                                             />
+                                            </Link>
                                         </div>
                                         <div className="hidden md:block">
                                             <div className="ml-10 flex items-baseline space-x-4">
@@ -82,7 +82,7 @@ export default function RootLayout({
                                         <div className="ml-4 flex items-center md:ml-6">
                                             <button
                                                 type="button"
-                                                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                                className="relative rounded-full bg-gray-900 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                             >
                                                 <span className="absolute -inset-1.5" />
                                                 <span className="sr-only">View notifications</span>
@@ -92,7 +92,7 @@ export default function RootLayout({
                                             {/* Profile dropdown */}
                                             <Menu as="div" className="relative ml-3">
                                                 <div>
-                                                    <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                                    <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                                         <span className="absolute -inset-1.5" />
                                                         <span className="sr-only">Open user menu</span>
                                                         <Cog6ToothIcon aria-hidden="true" className="size-6 text-gray-500 " />
@@ -118,7 +118,7 @@ export default function RootLayout({
                                     </div>
                                     <div className="-mr-2 flex md:hidden">
                                         {/* Mobile menu button */}
-                                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                        <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-900 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                             <span className="absolute -inset-0.5" />
                                             <span className="sr-only">Open main menu</span>
                                             <Bars3Icon aria-hidden="true" className="block size-6 group-data-[open]:hidden" />
@@ -154,7 +154,7 @@ export default function RootLayout({
                                     </div>
                                     <button
                                         type="button"
-                                        className="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                        className="relative ml-auto shrink-0 rounded-full bg-gray-900 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                     >
                                         <span className="absolute -inset-1.5" />
                                         <span className="sr-only">View notifications</span>

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const people = [
     {
       name: 'Lindsay Walton',
@@ -22,12 +24,14 @@ const people = [
             </p>
           </div>
           <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+            <Link href={'/groupawesome/team/add'}>
             <button
               type="button"
-              className="block rounded-md bg-indigo-900 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-900"
+              className="block rounded-md bg-gray-800 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-900"
             >
               Add admin
             </button>
+            </Link>
           </div>
         </div>
         <div className="mt-8 flow-root">
