@@ -1,3 +1,4 @@
+import { currentYear } from "@/lib/date"
 
 export function customers() {
     return [
@@ -14,67 +15,72 @@ export function customers() {
             street: '123 Alpha Rd',
             city: 'Kalispell',
             state: 'Montana',
-            postal_code: '59901'
+            postal_code: '59901',
+            createdAt: 'Fri Feb 09 2024 20:18:45 GMT+0000 (Coordinated Universal Time)',
         },
-        { 
+        {
             id: 2,
             name: 'Greg Hill',
             first_name: 'Lindsay',
             last_name: 'Walton',
-            title: 'Owner', 
-            business: 'Lawyer INC.', 
-            email: 'Greg@example.com', 
+            title: 'Owner',
+            business: 'Lawyer INC.',
+            email: 'Greg@example.com',
             phone: '406-607-0061',
             country: 'United States',
             street: '123 Alpha Rd',
             city: 'Kalispell',
             state: 'Montana',
-            postal_code: '59901'
+            postal_code: '59901',
+            createdAt: 'Fri Feb 09 2024 20:18:45 GMT+0000 (Coordinated Universal Time)',
         },
-        { 
+        {
             id: 3,
             name: 'Tess Willard',
             first_name: 'Tess',
             last_name: 'Willard',
-            title: 'Owner', 
-            business: 'Window Cleaning Business', 
-            email: 'tess@example.com', 
+            title: 'Owner',
+            business: 'Window Cleaning Business',
+            email: 'tess@example.com',
             phone: '406-607-2271',
             country: 'United States',
             street: '123 Alpha Rd',
             city: 'Kalispell',
             state: 'Montana',
-            postal_code: '59901'
+            postal_code: '59901',
+            createdAt: 'Fri Feb 09 2024 20:18:45 GMT+0000 (Coordinated Universal Time)',
         },
-        { 
+        {
             id: 4,
             name: 'Will Brown',
             first_name: 'Will',
             last_name: 'Brown',
-            title: 'Employee', 
-            business: 'Window Cleaning Business', 
-            email: 'will@example.com', 
+            title: 'Employee',
+            business: 'Window Cleaning Business',
+            email: 'will@example.com',
             phone: '406-607-8032',
             country: 'United States',
             street: '123 Alpha Rd',
             city: 'Kalispell',
             state: 'Montana',
-            postal_code: '59901'
+            postal_code: '59901',
+            createdAt: 'Fri Feb 09 2024 20:18:45 GMT+0000 (Coordinated Universal Time)',
         },
-        { 
+        {
             id: 5,
             name: 'Thom Walker',
             first_name: 'Thom',
             last_name: 'Walker',
-            title: 'Architect', 
-            business: 'Straight Line INC.', 
-            email: 'thom@example.com', 
+            title: 'Architect',
+            business: 'Straight Line INC.',
+            email: 'thom@example.com',
             phone: '406-607-0092',
             country: 'United States',
             street: '123 Alpha Rd',
             city: 'Kalispell',
             state: 'Montana',
-            postal_code: '59901'
+            postal_code: '59901',
+            createdAt: 'Fri Feb 09 2024 20:18:45 GMT+0000 (Coordinated Universal Time)',
         },
     ]
 };
@@ -87,71 +93,71 @@ export function expenses() {
             value: 15000,
             createdBy: 'Leslie Alexander',
             created: 'March 17, 2023',
-          },
-          {
+        },
+        {
             id: 2,
             name: 'Materials',
             value: 8000,
             createdBy: 'Leslie Alexander',
             created: 'May 5, 2023',
-          },
-          {
+        },
+        {
             id: 3,
             name: 'Vehicles',
             value: 5000,
             createdBy: 'Courtney Henry',
             created: 'May 25, 2023',
-          },
-          {
+        },
+        {
             id: 4,
             name: 'Rent',
             value: 5120,
             createdBy: 'Leonard Krasner',
             created: 'June 7, 2023',
-          },
-          {
+        },
+        {
             id: 5,
             name: 'Bills',
             value: 1000,
             createdBy: 'Courtney Henry',
             created: 'June 10, 2023',
-          },
+        },
     ]
 };
 
 export function invoices() {
     return [
         {
-          id: 11211,
-          name: 'Tuple',
-          lastInvoice: {company: 'Tuple', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            id: 11211,
+            name: 'Tuple',
+            lastInvoice: { company: 'Tuple', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
         {
-          id: 224554,
-          name: 'SavvyCal',
-          lastInvoice: {company: 'SavvyCal', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            id: 224554,
+            name: 'SavvyCal',
+            lastInvoice: { company: 'SavvyCal', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
         {
-          id: 345654,
-          name: 'Reform',
-          lastInvoice: {company: 'Reform', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            id: 345654,
+            name: 'Reform',
+            lastInvoice: { company: 'Reform', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
         {
             id: 434543,
             name: 'Reform',
-            lastInvoice: {company: 'Reform', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'Reform', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
-          {
+        {
             id: 576567,
             name: 'Blarg',
-            lastInvoice: {company: 'Blarg', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'Blarg', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
-          {
+        {
             id: 65456,
             name: 'Tripple',
-            lastInvoice: {company: 'Tripple', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'Tripple', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
-      ]
+    ]
 };
 
 export function revenue() {
@@ -185,6 +191,20 @@ export function revenue() {
             date: 'January 22, 2023'
         },
     ]
+};
+
+export function settings() {
+    return {
+        id: 1,
+        showCustomers: true,
+        showExpenses: true,
+        showInvoices: true,
+        showRevenue: true,
+        showRevenueChart: true,
+        showCustomersChart: true,
+        showExpensesChart: true,
+        showTeam: true,
+    }
 };
 
 export function team() {
@@ -250,6 +270,7 @@ export async function group() {
         expenses: expenses(),
         invoices: invoices(),
         revenue: revenue(),
-        team: team()
+        team: team(),
+        settings: settings()
     }
 }

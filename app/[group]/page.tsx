@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { expenses } from "@/actions/expenses";
+import { group } from '@/actions/group';
 import { revenuePerMonth } from "@/actions/revenue";
 import { customersPerMonth } from "@/actions/customers";
 
@@ -10,12 +10,15 @@ import { UseExpensesChart } from '@/components/UseExpensesChart';
 
 export default async function Page() {
 
+    const useGroup = await group();
+    const useSettings = useGroup.settings;
+    const useExpenses = useGroup.expenses;
+
     // Chart Data
-    const allExpenses = await expenses();
     const allRevenue = await revenuePerMonth();
     const allCustomers = await customersPerMonth();
 
-    const teamSection = (
+    const revenueSection = useSettings.showRevenueChart && (
         <div className="relative lg:col-span-3 border-solid rounded-md p-2 content-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Revenue</h2>
             <Suspense fallback={<div>Loading...</div>}>
@@ -24,7 +27,7 @@ export default async function Page() {
         </div>
     );
 
-    const customerSection = (
+    const customerSection = useSettings.showCustomersChart && (
         <div className="relative lg:col-span-3 border-solid rounded-md p-2 content-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Customers Per Month</h2>
             <Suspense fallback={<div>Loading...</div>}>
@@ -33,11 +36,11 @@ export default async function Page() {
         </div>
     );
 
-    const expensesChart = (
+    const expensesChart = useSettings.showExpensesChart && (
         <div className="relative lg:col-span-3 content-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
             <Suspense fallback={<div>Loading...</div>}>
-                <UseExpensesChart data={allExpenses} />
+                <UseExpensesChart data={useExpenses} />
             </Suspense>
         </div>
     );
@@ -50,7 +53,7 @@ export default async function Page() {
                     Awesome Company INC.
                 </p>
                 <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-                    {teamSection}
+                    {revenueSection}
                     {customerSection}
                     {expensesChart}
                 </div>

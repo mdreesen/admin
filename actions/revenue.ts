@@ -6,7 +6,7 @@ export async function revenue() {
     return groupCustomers.revenue
 }
 
-export function revenuePerMonth() {
+export async function revenuePerMonth() {
     return [
         {
             name: "January",
