@@ -4,11 +4,6 @@ import { Bars3Icon, BellIcon, XMarkIcon, Cog6ToothIcon } from '@heroicons/react/
 import Link from "next/link";
 import { group } from "@/actions/group";
 
-
-const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-}
 const navigation = [
     { name: 'Dashboard', href: '/groupawesome', current: false },
     { name: 'Customers', href: '/groupawesome/customers', current: false },
@@ -33,6 +28,10 @@ export default async function RootLayout({
 }>) {
 
     const useGroup = await group();
+
+    const user = {
+        name: useGroup.group_name,
+    }
 
     return (
         <div className="min-h-full">
@@ -141,7 +140,6 @@ export default async function RootLayout({
                             <div className="flex items-center px-5">
                                 <div className="ml-3">
                                     <div className="text-base/5 font-medium text-white">{user.name}</div>
-                                    <div className="text-sm font-medium text-gray-400">{user.email}</div>
                                 </div>
                                 <button
                                     type="button"

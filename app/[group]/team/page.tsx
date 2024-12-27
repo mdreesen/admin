@@ -10,7 +10,7 @@ export default async function Page() {
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
-          <h1 className="text-base font-semibold text-gray-900">Admins</h1>
+          <h1 className="text-base font-semibold text-gray-900">Team</h1>
           <p className="mt-2 text-sm text-gray-700">
             A list of all the users in your account including their name, title, email and role.
           </p>
@@ -55,13 +55,13 @@ export default async function Page() {
                   const statusColors = () => {
                     switch (true) {
                       case item.status === 'active':
-                        return 'bg-green-50';
+                        return 'bg-green-50 text-green-700';
                         break
                       case item.status === 'terminated':
-                        return 'bg-red-100'
+                        return 'bg-red-100 text-red-700'
                         break
                       default:
-                        return 'bg-yellow-50'
+                        return 'bg-yellow-50 text-yellow-700'
                     }
                   }
                   return (
@@ -79,7 +79,7 @@ export default async function Page() {
                         <div className="mt-1 text-gray-500">{item.department}</div>
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
-                        <span className={`inline-flex items-center rounded-md ${statusColors()} px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20`}>
+                        <span className={`inline-flex items-center rounded-md ${statusColors()} px-2 py-1 text-xs font-medium ring-1 ring-inset ring-green-600/20`}>
                           {item.status}
                         </span>
                       </td>
