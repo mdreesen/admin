@@ -1,6 +1,6 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
-import { formatCurrency } from '@/lib/formatCurrency';
+import { formatCurrency } from '@/lib/formatters';
 import Link from 'next/link';
 import { expenses } from '@/actions/expenses';
 

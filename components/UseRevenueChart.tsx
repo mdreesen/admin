@@ -2,7 +2,7 @@
 
 import React from "react"
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { formatCurrency } from '@/lib/formatCurrency';
+import { formatCurrency } from '@/lib/formatters';
 
 export const UseRevenueChart = ({ data }: any) => {
 

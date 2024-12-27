@@ -1,6 +1,6 @@
 "use client"
 
-import { formatCurrency } from '@/lib/formatCurrency';
+import { formatCurrency } from '@/lib/formatters';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
