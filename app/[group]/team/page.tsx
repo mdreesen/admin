@@ -55,13 +55,13 @@ export default async function Page() {
                   const statusColors = () => {
                     switch (true) {
                       case item.status === 'active':
-                        return 'bg-green-50 text-green-700';
+                        return 'text-green-600 bg-green-50 ring-green-500/10';
                         break
                       case item.status === 'terminated':
-                        return 'bg-red-100 text-red-700'
+                        return 'text-red-600 bg-red-50 ring-red-500/10'
                         break
                       default:
-                        return 'bg-yellow-50 text-yellow-700'
+                        return 'text-yellow-600 bg-yellow-50 ring-yellow-500/10'
                     }
                   }
                   return (

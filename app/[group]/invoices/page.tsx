@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 const statuses = {
   Paid: 'text-green-700 bg-green-50 ring-green-600/20',
+  Active: 'text-yellow-600 bg-yellow-50 ring-yellow-500/10',
   Withdraw: 'text-gray-600 bg-gray-50 ring-gray-500/10',
   Overdue: 'text-red-700 bg-red-50 ring-red-600/10',
 } as any

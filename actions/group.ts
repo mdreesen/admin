@@ -135,12 +135,12 @@ export function invoices() {
         {
             id: 224554,
             name: 'SavvyCal',
-            lastInvoice: { company: 'SavvyCal', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'SavvyCal', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Withdraw' },
         },
         {
             id: 345654,
             name: 'Reform',
-            lastInvoice: { company: 'Reform', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'Reform', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Active' },
         },
         {
             id: 434543,
@@ -150,7 +150,7 @@ export function invoices() {
         {
             id: 576567,
             name: 'Blarg',
-            lastInvoice: { company: 'Blarg', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'Blarg', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Overdue' },
         },
         {
             id: 65456,
