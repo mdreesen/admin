@@ -27,7 +27,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="mt-8 flow-root">
-        <div className="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
+        <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
@@ -85,6 +85,9 @@ export default async function Page() {
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">{item.role}</td>
                       <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-left text-sm font-medium sm:pr-0">
+                        {/* <Link href={`/groupawesome/team/edit/${item.id}`} className="text-indigo-900 hover:text-indigo-900">
+                          Edit<span className="sr-only">, {item.name}</span>
+                        </Link> */}
 
                         <div className="flex flex-none items-center gap-x-4">
                           <Menu as="div" className="relative flex-none">
