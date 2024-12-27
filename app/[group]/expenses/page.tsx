@@ -20,6 +20,18 @@ export default async function Page() {
 
   return (
     <ul role="list" className="divide-y divide-gray-100">
+
+      <div className="mt-4 sm:mt-0 sm:flex-none">
+        <Link href={'/groupawesome/expenses/add'}>
+          <button
+            type="button"
+            className="block rounded-md bg-gray-800 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-900"
+          >
+            Add expense
+          </button>
+        </Link>
+      </div>
+
       {allExpenses.map((item) => (
         <li key={item.id} className="flex items-center justify-between gap-x-6 py-5">
           <div className="min-w-0">
@@ -56,7 +68,7 @@ export default async function Page() {
               >
                 <MenuItem>
                   <Link
-                    href="/groupawesome/expenses/edit"
+                    href={`/groupawesome/expenses/edit/${item.id}`}
                     className="block px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
                   >
                     Edit<span className="sr-only">, {item.name}</span>

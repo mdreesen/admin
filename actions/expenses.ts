@@ -36,4 +36,15 @@ export async function expenses() {
             created: 'June 10, 2023',
           },
     ]
+};
+
+export async function findExpense(data: string) {
+  const allExpenses = await expenses();
+
+  const expense = allExpenses.filter((item) => {
+      const idToString = item.id.toString()
+      return idToString.includes(data)
+  });
+
+  return expense[0];
 }
