@@ -34,7 +34,7 @@ export default async function Page() {
     );
 
     const expensesChart = (
-        <div className="relative lg:col-span-6 content-center justify-items-center">
+        <div className="relative lg:col-span-3 content-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
             <Suspense fallback={<div>Loading...</div>}>
                 <UseExpensesChart data={allExpenses} />
@@ -49,11 +49,9 @@ export default async function Page() {
                 <p className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
                     Awesome Company INC.
                 </p>
-                <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-3">
+                <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
                     {teamSection}
                     {customerSection}
-                    {/* {revenueChart}
-                    {customersChart} */}
                     {expensesChart}
                 </div>
             </div>
