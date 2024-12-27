@@ -132,7 +132,6 @@ export async function customersPerMonth() {
 }
 
 export async function findCustomer(data: string) {
-    console.log('server team', data);
     const users = await customers();
 
     const user = users.filter((item) => {

@@ -53,7 +53,6 @@ export async function team() {
 };
 
 export async function findTeamMember(data: string) {
-    console.log('server team', data);
     const allMembers = await team();
 
     const member = allMembers.filter((item) => {
