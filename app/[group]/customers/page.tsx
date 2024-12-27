@@ -53,13 +53,12 @@ export default async function Page() {
                 {people.map((item) => (
                   <tr key={item.email}>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                    {item.first_name} {item.last_name}
+                      {item.first_name} {item.last_name}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{item.title}</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{item.email}</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{item.phone}</td>
                     <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-left text-sm font-medium sm:pr-0">
-
                       <div className="flex flex-none items-center gap-x-4">
                         <Menu as="div" className="relative flex-none">
                           <MenuButton className="-m-2.5 block p-2.5 text-gray-500 hover:text-gray-900">
@@ -72,7 +71,15 @@ export default async function Page() {
                           >
                             <MenuItem>
                               <Link
-                                href={`/groupawesome/expenses/edit/${item.id}`}
+                                href={`/groupawesome/customers/details/${item.id}`}
+                                className="block px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
+                              >
+                                Details<span className="sr-only">, {item.first_name} {item.last_name}</span>
+                              </Link>
+                            </MenuItem>
+                            <MenuItem>
+                              <Link
+                                href={`/groupawesome/customers/edit/${item.id}`}
                                 className="block px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
                               >
                                 Edit<span className="sr-only">, {item.first_name} {item.last_name}</span>
