@@ -12,6 +12,7 @@ const navigation = [
     { name: 'Dashboard', href: '/groupawesome', current: false },
     { name: 'Customers', href: '/groupawesome/customers', current: false },
     { name: 'Expenses', href: '/groupawesome/expenses', current: false },
+    { name: 'Invoices', href: '/groupawesome/invoices', current: false },
     { name: 'Revenue', href: '/groupawesome/revenue', current: false },
     { name: 'Team', href: '/groupawesome/team', current: false },
 ]

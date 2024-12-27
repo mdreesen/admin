@@ -8,10 +8,6 @@ import { UseRevenueChart } from "@/components/UseRevenueChart";
 import { UseCustomersChart } from "@/components/UseCustomersChart";
 import { UseExpensesChart } from '@/components/UseExpensesChart';
 
-// Cards
-import AdminCards from '@/components/cards/Admins';
-import CustomerCards from '@/components/cards/Customers';
-
 export default async function Page() {
 
     // Chart Data
@@ -37,24 +33,6 @@ export default async function Page() {
         </div>
     );
 
-    const revenueChart = (
-        <div className="relative lg:col-span-3 content-center justify-items-center border-2 border-grey-500">
-            <h2 className="text-base/7 font-semibold text-indigo-900 border-b-2 border-grey-300">Team</h2>
-            <Suspense fallback={<div>Loading...</div>}>
-                <AdminCards />
-            </Suspense>
-        </div>
-    );
-
-    const customersChart = (
-        <div className="relative lg:col-span-3 content-center justify-items-center border-2 border-grey-500">
-            <h2 className="text-base/7 font-semibold text-indigo-900 border-b-2 border-grey-300">Customers</h2>
-            <Suspense fallback={<div>Loading...</div>}>
-                <CustomerCards />
-            </Suspense>
-        </div>
-    );
-
     const expensesChart = (
         <div className="relative lg:col-span-6 content-center justify-items-center">
             <h2 className="text-base/7 font-semibold text-indigo-900">Expenses</h2>
@@ -74,8 +52,8 @@ export default async function Page() {
                 <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-3">
                     {teamSection}
                     {customerSection}
-                    {revenueChart}
-                    {customersChart}
+                    {/* {revenueChart}
+                    {customersChart} */}
                     {expensesChart}
                 </div>
             </div>
