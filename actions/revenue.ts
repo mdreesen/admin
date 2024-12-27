@@ -1,4 +1,10 @@
 import {invoices} from '@/actions/invoices';
+import { group } from '@/actions/group';
+
+export async function revenue() {
+    const groupCustomers = await group();
+    return groupCustomers.revenue
+}
 
 export function revenuePerMonth() {
     return [
@@ -52,39 +58,6 @@ export function revenuePerMonth() {
         },
     ]
 };
-
-export async function revenue() {
-    return [
-        {
-            id: 1,
-            company: 'Richard & Sons',
-            commission: '2.00',
-            expenseForProject: '1.000',
-            customerPayment: '4,509.00',
-            total: '3,509.00',
-            date: 'January 22, 2023'
-        },
-        {
-            id: 2,
-            company: 'Planet Express',
-            commission: '0.00',
-            expenseForProject: '4,000.00',
-            customerPayment: '3,999.00',
-            total: '1.00',
-            date: 'January 22, 2023'
-
-        },
-        {
-            id: 3,
-            company: 'Window Cleaning',
-            commission: '3.00',
-            expenseForProject: '200.00',
-            customerPayment: '3,000.00',
-            total: '2,800.00',
-            date: 'January 22, 2023'
-        },
-    ]
-}
 
 export async function allRevenue() {
     const allInvoices = await invoices();

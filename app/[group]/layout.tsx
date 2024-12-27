@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Link from "next/link";
+import { group } from "@/actions/group";
 
 
 const user = {
@@ -25,11 +26,14 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+
+    const useGroup = await group();
+
     return (
         <div className="min-h-full">
             <div className="bg-gray-900 pb-32">
@@ -166,6 +170,7 @@ export default function RootLayout({
                 <header className="py-10">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <h1 className="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
+                        <p className="text-xl font-bold tracking-tight text-white">{useGroup.group_name}</p>
                     </div>
                 </header>
             </div>

@@ -15,7 +15,7 @@ export default async function Page() {
             A list of all the customers in your account.
           </p>
         </div>
-        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+        <div className="flex justify-end mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
           <Link href={'/groupawesome/customers/add'}>
             <button
               type="button"

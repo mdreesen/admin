@@ -21,7 +21,7 @@ export default async function Page() {
   return (
     <ul role="list" className="divide-y divide-gray-100">
 
-      <div className="mt-4 sm:mt-0 sm:flex-none">
+      <div className="flex justify-end mt-4 sm:mt-0 sm:flex-none">
         <Link href={'/groupawesome/expenses/add'}>
           <button
             type="button"
