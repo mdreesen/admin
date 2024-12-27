@@ -4,51 +4,51 @@ export function revenuePerMonth() {
     return [
         {
             name: "January",
-            "Revenue of month": 2488,
+            "Revenue of month": 1000,
         },
         {
             name: "February",
-            "Revenue of month": 2188,
+            "Revenue of month": 1500,
         },
         {
             name: "March",
-            "Revenue of month": 2088,
+            "Revenue of month": 2000,
         },
         {
             name: "April",
-            "Revenue of month": 2388,
+            "Revenue of month": 2900,
         },
         {
             name: "May",
-            "Revenue of month": 3088,
+            "Revenue of month": 4400,
         },
         {
             name: "June",
-            "Revenue of month": 3500,
+            "Revenue of month": 5200,
         },
         {
             name: "July",
-            "Revenue of month": 5000,
+            "Revenue of month": 5500,
         },
         {
             name: "August",
-            "Revenue of month": 9000,
+            "Revenue of month": 7500,
         },
         {
             name: "September",
-            "Revenue of month": 6000,
+            "Revenue of month": 7000,
         },
         {
             name: "October",
-            "Revenue of month": 3000,
+            "Revenue of month": 9500,
         },
         {
             name: "November",
-            "Revenue of month": 2488,
+            "Revenue of month": 10000,
         },
         {
             name: "December",
-            "Revenue of month": 1200,
+            "Revenue of month": 11000,
         },
     ]
 };

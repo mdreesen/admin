@@ -4,7 +4,7 @@ export async function invoices() {
           id: 11211,
           name: 'Tuple',
           imageUrl: 'https://tailwindui.com/plus/img/logos/48x48/tuple.svg',
-          lastInvoice: {company: 'Tuple', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '10,000.00', total: '14,000.00', status: 'Paid' },
+          lastInvoice: {company: 'Tuple', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
         {
           id: 224554,
@@ -37,4 +37,15 @@ export async function invoices() {
             lastInvoice: {company: 'Tripple', commission: '0.00', expenseForProject:'0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
       ]
+};
+
+export async function findInvoices(data: string) {
+  const allInvoices = await invoices();
+
+  const findInvoice = allInvoices.filter((item) => {
+      const idToString = item.id.toString()
+      return idToString.includes(data)
+  });
+
+  return findInvoice[0];
 }
