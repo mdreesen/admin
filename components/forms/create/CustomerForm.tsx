@@ -197,7 +197,7 @@ export default function CustomerForm() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <Link href={'/groupawesome/team'}>
+        <Link href={'/groupawesome/customers'}>
           <button type="button" className="text-sm/6 font-semibold text-gray-900">
             Cancel
           </button>
