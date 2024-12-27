@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { team } from '@/actions/team';
   
-  export default function Page() {
-    const allTeam = team();
+  export default async function Page() {
+    const allTeam = await team();
 
     return (
       <div className="px-4 sm:px-6 lg:px-8">

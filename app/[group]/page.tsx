@@ -15,9 +15,9 @@ import CustomerCards from '@/components/cards/Customers';
 export default async function Page() {
 
     // Chart Data
-    const allExpenses = expenses();
-    const allRevenue = revenuePerMonth();
-    const allCustomers = customersPerMonth();
+    const allExpenses = await expenses();
+    const allRevenue = await revenuePerMonth();
+    const allCustomers = await customersPerMonth();
 
     const teamSection = (
         <div className="relative lg:col-span-3 border-solid rounded-md p-2 content-center">

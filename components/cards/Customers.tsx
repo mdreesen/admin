@@ -1,8 +1,8 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import { customers } from '@/actions/customers';
 
-export default function Customers() {
-  const people = customers();
+export default async function Customers() {
+  const people = await customers();
 
   return (
     <ul role="list" className="grid grid-cols-1 h-[56vh] overflow-auto w-full">

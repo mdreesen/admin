@@ -1,4 +1,4 @@
-export function expenses() {
+export async function expenses() {
     return [
         {
             id: 1,

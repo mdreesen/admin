@@ -1,49 +1,84 @@
-export function customers() {
+export async function customers() {
     return [
         {
             id: 1,
             name: 'Lindsay Walton',
+            first_name: 'Lindsay',
+            last_name: 'Walton',
             title: 'Owner',
             business: 'Property Owner (Great Bear Property)',
             email: 'lindsay@example.com',
-            phone: '219-241-0061'
+            phone: '219-241-0061',
+            country: 'United States',
+            street: '123 Alpha Rd',
+            city: 'Kalispell',
+            state: 'Montana',
+            postal_code: '59901'
         },
         { 
             id: 2,
-            name: 'Greg Hill', 
+            name: 'Greg Hill',
+            first_name: 'Lindsay',
+            last_name: 'Walton',
             title: 'Owner', 
             business: 'Lawyer INC.', 
             email: 'Greg@example.com', 
-            phone: '406-607-0061' 
+            phone: '406-607-0061',
+            country: 'United States',
+            street: '123 Alpha Rd',
+            city: 'Kalispell',
+            state: 'Montana',
+            postal_code: '59901'
         },
         { 
             id: 3,
-            name: 'Tess Willard', 
+            name: 'Tess Willard',
+            first_name: 'Tess',
+            last_name: 'Willard',
             title: 'Owner', 
             business: 'Window Cleaning Business', 
             email: 'tess@example.com', 
-            phone: '406-607-2271' 
+            phone: '406-607-2271',
+            country: 'United States',
+            street: '123 Alpha Rd',
+            city: 'Kalispell',
+            state: 'Montana',
+            postal_code: '59901'
         },
         { 
             id: 4,
-            name: 'Will Brown', 
+            name: 'Will Brown',
+            first_name: 'Will',
+            last_name: 'Brown',
             title: 'Employee', 
             business: 'Window Cleaning Business', 
             email: 'will@example.com', 
-            phone: '406-607-8032' 
+            phone: '406-607-8032',
+            country: 'United States',
+            street: '123 Alpha Rd',
+            city: 'Kalispell',
+            state: 'Montana',
+            postal_code: '59901'
         },
         { 
             id: 5,
-            name: 'Thom Walker', 
+            name: 'Thom Walker',
+            first_name: 'Thom',
+            last_name: 'Walker',
             title: 'Architect', 
             business: 'Straight Line INC.', 
             email: 'thom@example.com', 
-            phone: '406-607-0092' 
+            phone: '406-607-0092',
+            country: 'United States',
+            street: '123 Alpha Rd',
+            city: 'Kalispell',
+            state: 'Montana',
+            postal_code: '59901'
         },
     ]
 }
 
-export function customersPerMonth() {
+export async function customersPerMonth() {
     return [
         {
             name: "January",
@@ -94,4 +129,16 @@ export function customersPerMonth() {
             "Customers per month": 9000,
         },
     ]
+}
+
+export async function findCustomer(data: string) {
+    console.log('server team', data);
+    const users = await customers();
+
+    const user = users.filter((item) => {
+        const idToString = item.id.toString()
+        return idToString.includes(data)
+    });
+
+    return user[0];
 }

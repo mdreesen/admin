@@ -1,8 +1,8 @@
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import { team } from '@/actions/team';
 
-export default function Admins() {
-  const allTeam = team();
+export default async function Admins() {
+  const allTeam = await team();
 
   return (
     <ul role="list" className="grid grid-cols-1 h-[56vh] overflow-auto w-full">

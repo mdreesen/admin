@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { customers } from '@/actions/customers';
   
-  export default function Page() {
-    const people = customers();
+  export default async function Page() {
+    const people = await customers();
 
     return (
       <div className="px-4 sm:px-6 lg:px-8">

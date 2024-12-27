@@ -15,8 +15,8 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Page() {
-  const allExpenses = expenses();
+export default async function Page() {
+  const allExpenses = await expenses();
 
   return (
     <ul role="list" className="divide-y divide-gray-100">
