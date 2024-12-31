@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Link from "next/link";
-import { group } from "@/actions/group";
+import { group } from "@/actions/groupExampleData";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')

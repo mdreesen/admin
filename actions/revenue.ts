@@ -1,5 +1,5 @@
 import {invoices} from '@/actions/invoices';
-import { group } from '@/actions/group';
+import { group } from '@/actions/groupExampleData';
 
 export async function revenue() {
     const groupCustomers = await group();

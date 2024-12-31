@@ -1,4 +1,4 @@
-import { group } from '@/actions/group';
+import { group } from '@/actions/groupExampleData';
 
 export async function team() {
     const groupCustomers = await group();

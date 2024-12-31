@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { group } from '@/actions/group';
+import { fetchGroup } from '@/actions/group';
 import { revenuePerMonth } from "@/actions/revenue";
 import { customersPerMonth } from "@/actions/customers";
 
@@ -10,9 +10,10 @@ import { UseExpensesChart } from '@/components/UseExpensesChart';
 
 export default async function Page() {
 
-    const useGroup = await group();
+    const useGroup = await fetchGroup();
     const useSettings = useGroup.settings;
     const useExpenses = useGroup.expenses;
+
 
     // Chart Data
     const allRevenue = await revenuePerMonth();

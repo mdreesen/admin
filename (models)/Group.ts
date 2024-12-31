@@ -70,6 +70,7 @@ const teamSchema = new Schema(
     {
         first_name: String,
         last_name: String,
+        password: String,
         title: String,
         department: String,
         email: String,
@@ -94,5 +95,5 @@ const groupSchema = new Schema(
         settings: [settingsSchema],
     }, { timestamps: true });
 
-const Group = mongoose.models.Group || mongoose.model("Farmers", groupSchema);
+const Group = mongoose.models.Group || mongoose.model("Group", groupSchema);
 export default Group;

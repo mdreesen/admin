@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
@@ -97,9 +98,9 @@ export default function Page() {
                     </div>
 
                     <div className="text-sm/6">
-                      <a href="#" className="font-semibold text-gray-900 hover:text-gray-500">
+                      <Link href="#" className="font-semibold text-gray-900 hover:text-gray-500">
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -110,6 +111,13 @@ export default function Page() {
                     >
                       Sign in
                     </button>
+                  </div>
+                  <div>
+                  <div className="text-sm/6">
+                      <Link href="/authentication/register" className="font-semibold text-gray-900 hover:text-gray-500">
+                        Need to sign up?
+                      </Link>
+                    </div>
                   </div>
                 </form>
               </div>

@@ -1,5 +1,5 @@
 import UseProfileSwitches from '@/components/switches/UseProfileSwitches';
-import { group } from '@/actions/group';
+import { group } from '@/actions/groupExampleData';
 
 export default async function Page() {
   const useGroup = await group();
