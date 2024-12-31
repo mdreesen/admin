@@ -28,10 +28,21 @@ export const register = async (values: any) => {
             status: 'active'
         };
 
+        const groupSettings = {
+            showCustomers: true,
+            showExpenses: true,
+            showInvoices: true,
+            showRevenue: true,
+            showRevenueChart: true,
+            showCustomersChart: true,
+            showExpensesChart: true,
+            showTeam: true,
+        };
+
         const save = await group.save();
 
-        console.log(save);
         const user = await Group.findOneAndUpdate({ _id: save._id }, { $addToSet: { team: isUser } }, { new: true });
+        const settings = await Group.findOneAndUpdate({ _id: save._id }, { settings: groupSettings }, { new: true });
 
 
     } catch (e) {

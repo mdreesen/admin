@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
-import { team } from '@/actions/team';
+import { fetchGroup } from '@/actions/group';
 import { statusColors } from "@/lib/statusColors";
 
 export default async function Page() {
-  const allTeam = await team();
+  const group = await fetchGroup();
+  const team = group.team;
 
   return (
     <div className="px-4 sm:px-6 lg:px-8">
@@ -51,7 +52,7 @@ export default async function Page() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {allTeam.map((item) => {
+                {team.map((item: any) => {
                   return (
                     <tr key={item.email}>
                       <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">

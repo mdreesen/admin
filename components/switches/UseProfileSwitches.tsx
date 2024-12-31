@@ -2,7 +2,6 @@
 import { Switch } from '@headlessui/react';
 import { useState } from "react";
 
-
 interface CheckboxOption {
     id: string;
     label: string;
@@ -57,8 +56,8 @@ export default function Page({ data }: any) {
 
 
     return (
-        <div>
+        <form>
             {switchGroup}
-        </div>
+        </form>
     )
 }

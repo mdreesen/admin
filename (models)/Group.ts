@@ -92,7 +92,7 @@ const groupSchema = new Schema(
         invoices: [invoicesSchema],
         revenue: [revenueSchema],
         team: [teamSchema],
-        settings: [settingsSchema],
+        settings: Object,
     }, { timestamps: true });
 
 const Group = mongoose.models.Group || mongoose.model("Group", groupSchema);

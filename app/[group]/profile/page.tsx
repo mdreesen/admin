@@ -1,8 +1,9 @@
 import UseProfileSwitches from '@/components/switches/UseProfileSwitches';
-import { group } from '@/actions/groupExampleData';
+import { fetchGroup } from '@/actions/group';
 
 export default async function Page() {
-  const useGroup = await group();
+  const useGroup = await fetchGroup();
+  const useSettings = useGroup.settings;
 
   return (
     <div>
@@ -18,7 +19,7 @@ export default async function Page() {
             <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">update</dd>
           </div>
 
-          <UseProfileSwitches data={useGroup.settings} />
+          <UseProfileSwitches data={useSettings} />
 
         </dl>
       </div>

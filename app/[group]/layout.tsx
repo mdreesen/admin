@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import Link from "next/link";
-import { group } from "@/actions/groupExampleData";
+import { fetchGroup } from '@/actions/group';
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -14,7 +14,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
 
-    const useGroup = await group();
+    const useGroup = await fetchGroup();
 
     const user = {
         name: useGroup.group_name,
