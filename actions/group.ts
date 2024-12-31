@@ -130,7 +130,7 @@ export function invoices() {
         {
             id: 11211,
             name: 'Tuple',
-            lastInvoice: { company: 'Tuple', commission: '0.00', expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
+            lastInvoice: { company: 'Tuple', commission: 0.00, expenseForProject: '0.00', date: 'January 22, 2023', dateTime: '2023-01-22', customerPayment: '14,000.00', total: '14,000.00', status: 'Paid' },
         },
         {
             id: 224554,
@@ -195,7 +195,6 @@ export function revenue() {
 
 export function settings() {
     return {
-        id: 1,
         showCustomers: true,
         showExpenses: true,
         showInvoices: true,

@@ -4,19 +4,6 @@ import { Bars3Icon, BellIcon, XMarkIcon, Cog6ToothIcon } from '@heroicons/react/
 import Link from "next/link";
 import { group } from "@/actions/group";
 
-const navigation = [
-    { name: 'Dashboard', href: '/groupawesome', current: false },
-    { name: 'Customers', href: '/groupawesome/customers', current: false },
-    { name: 'Expenses', href: '/groupawesome/expenses', current: false },
-    { name: 'Invoices', href: '/groupawesome/invoices', current: false },
-    { name: 'Revenue', href: '/groupawesome/revenue', current: false },
-    { name: 'Team', href: '/groupawesome/team', current: false },
-]
-const userNavigation = [
-    { name: 'Your Profile', href: '/groupawesome/profile' },
-    { name: 'Sign out', href: '/' },
-]
-
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
@@ -31,7 +18,23 @@ export default async function RootLayout({
 
     const user = {
         name: useGroup.group_name,
-    }
+    };
+
+    const settings = useGroup.settings;
+
+
+    const navigation = [
+        { name: 'Dashboard', href: '/groupawesome', current: false, showLink: true },
+        { name: 'Customers', href: '/groupawesome/customers', current: false, showLink: settings.showCustomers },
+        { name: 'Expenses', href: '/groupawesome/expenses', current: false, showLink: settings.showExpenses },
+        { name: 'Invoices', href: '/groupawesome/invoices', current: false, showLink: settings.showInvoices },
+        { name: 'Revenue', href: '/groupawesome/revenue', current: false, showLink: settings.showRevenue },
+        { name: 'Team', href: '/groupawesome/team', current: false, showLink: settings.showTeam },
+    ]
+    const userNavigation = [
+        { name: 'Your Profile', href: '/groupawesome/profile' },
+        { name: 'Sign out', href: '/' },
+    ]
 
     return (
         <div className="min-h-full">
@@ -52,11 +55,12 @@ export default async function RootLayout({
                                             />
                                         </Link>
                                     </div>
-                                    <div className="hidden md:block">
-                                        <div className="ml-10 flex items-baseline space-x-4">
-                                            {navigation.map((item) => (
+                                    {navigation.map((item) => item.showLink && (
+                                        <div 
+                                            key={item.name}
+                                            className="hidden md:block">
+                                            <div className="ml-10 flex items-baseline space-x-4">
                                                 <a
-                                                    key={item.name}
                                                     href={item.href}
                                                     aria-current={item.name ? 'page' : undefined}
                                                     className={classNames(
@@ -65,9 +69,9 @@ export default async function RootLayout({
                                                 >
                                                     {item.name}
                                                 </a>
-                                            ))}
+                                            </div>
                                         </div>
-                                    </div>
+                                    ))}
                                 </div>
                                 <div className="hidden md:block">
                                     <div className="ml-4 flex items-center md:ml-6">
@@ -122,7 +126,7 @@ export default async function RootLayout({
 
                     <DisclosurePanel className="border-b border-gray-700 md:hidden">
                         <div className="space-y-1 px-2 py-3 sm:px-3">
-                            {navigation.map((item) => (
+                            {navigation.map((item) => item.showLink && (
                                 <DisclosureButton
                                     key={item.name}
                                     as="a"

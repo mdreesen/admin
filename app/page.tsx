@@ -97,7 +97,7 @@ export default function Page() {
                     </div>
 
                     <div className="text-sm/6">
-                      <a href="#" className="font-semibold text-indigo-900 hover:text-indigo-500">
+                      <a href="#" className="font-semibold text-gray-900 hover:text-gray-500">
                         Forgot password?
                       </a>
                     </div>
@@ -106,7 +106,7 @@ export default function Page() {
                   <div>
                     <button
                       type="submit"
-                      className="flex w-full justify-center rounded-md bg-indigo-900 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-900"
+                      className="flex w-full justify-center rounded-md bg-gray-900 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
                       Sign in
                     </button>

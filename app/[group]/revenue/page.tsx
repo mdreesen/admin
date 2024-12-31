@@ -1,6 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import { allRevenue } from '@/actions/revenue';
+import { formatCurrency } from '@/lib/formatters';
 import Link from 'next/link';
 
 export default async function Page() {
@@ -59,7 +60,7 @@ export default async function Page() {
                                         scope="col"
                                         className="whitespace-nowrap px-2 py-3.5 text-left text-sm font-semibold text-gray-900"
                                     >
-                                        Commision
+                                        Commission
                                     </th>
                                     <th
                                         scope="col"
@@ -93,10 +94,10 @@ export default async function Page() {
                                         <td className="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900">
                                             {item.company}
                                         </td>
-                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{item.commission}</td>
-                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{item.expenseForProject}</td>
-                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{item.customerPayment}</td>
-                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{item.total}</td>
+                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{formatCurrency(item.commission)}</td>
+                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{formatCurrency(item.expenseForProject)}</td>
+                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{formatCurrency(item.customerPayment)}</td>
+                                        <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{formatCurrency(item.total)}</td>
                                         <td className="relative whitespace-nowrap py-2 pl-3 pr-4 text-left text-sm font-medium sm:pr-0">
 
                                             <div className="flex flex-none items-center gap-x-4">

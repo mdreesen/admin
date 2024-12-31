@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import { team } from '@/actions/team';
+import { statusColors } from "@/lib/statusColors";
 
 export default async function Page() {
   const allTeam = await team();
@@ -51,19 +52,6 @@ export default async function Page() {
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
                 {allTeam.map((item) => {
-
-                  const statusColors = () => {
-                    switch (true) {
-                      case item.status === 'active':
-                        return 'text-green-600 bg-green-50 ring-green-500/10';
-                        break
-                      case item.status === 'terminated':
-                        return 'text-red-600 bg-red-50 ring-red-500/10'
-                        break
-                      default:
-                        return 'text-yellow-600 bg-yellow-50 ring-yellow-500/10'
-                    }
-                  }
                   return (
                     <tr key={item.email}>
                       <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
@@ -79,7 +67,7 @@ export default async function Page() {
                         <div className="mt-1 text-gray-500">{item.department}</div>
                       </td>
                       <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
-                        <span className={`inline-flex items-center rounded-md ${statusColors()} px-2 py-1 text-xs font-medium ring-1 ring-inset ring-green-600/20`}>
+                        <span className={`inline-flex items-center rounded-md ${statusColors(item)} px-2 py-1 text-xs font-medium ring-1 ring-inset ring-green-600/20`}>
                           {item.status}
                         </span>
                       </td>

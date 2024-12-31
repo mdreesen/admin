@@ -1,3 +1,3 @@
-export function formatCurrency(number: number) {
+export function formatCurrency(number: number | string) {
     return `$${number}`
 }

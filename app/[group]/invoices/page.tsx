@@ -1,6 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { EllipsisHorizontalIcon } from '@heroicons/react/20/solid';
 import { invoices } from '@/actions/invoices';
+import { formatCurrency } from '@/lib/formatters';
 import Link from 'next/link';
 
 const statuses = {
@@ -81,7 +82,7 @@ export default async function Page() {
               <div className="flex justify-between gap-x-4 py-3">
                 <dt className="text-gray-500">Amount</dt>
                 <dd className="flex items-start gap-x-2">
-                  <div className="font-medium text-gray-900">{item.lastInvoice.total}</div>
+                  <div className="font-medium text-gray-900">{formatCurrency(item.lastInvoice.total)}</div>
                   <div
                     className={classNames(
                       statuses[item.lastInvoice.status],
